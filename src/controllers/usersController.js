@@ -13,5 +13,5 @@ module.exports = {
     const SQL = 'select * from users';
     const [result] = await pool.query(SQL);
     return response.json(result);  
-  },
+  }
 }

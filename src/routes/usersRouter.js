@@ -4,7 +4,7 @@ const router = express.Router();
 
 router
   .get('/health', controller.health)
-  .get('/all', controller.getAll);
+  .get('/all', controller.getAll)
 // router.patch('/:username', controller.update);
 // router.delete(':/username', controller.delete);
 
