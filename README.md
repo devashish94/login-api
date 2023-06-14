@@ -11,7 +11,7 @@ MYSQL_PASSWORD=
 ```
 
 ### If running MySQL using Docker
-Use the following command 
+Use the following command to spawn a new MySQL Database container 
 ```
 sudo docker run --name=<any-name> -e MYSQL_ROOT_PASSWORD=<your-password> -p 3306:3306 -d mysql
 ```
