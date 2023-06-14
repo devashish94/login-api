@@ -16,3 +16,12 @@ Use the following command
 ```
 sudo docker run --name=<any-name> -e MYSQL_ROOT_PASSWORD=<your-password> -p 3306:3306 -d mysql
 ```
+If you wish to restart the old instance of the database (because it had the data)
+then find the CONTAINER ID of the last instance of the database using
+```
+sudo docker ps -a
+```
+Now run the following command to resume the database from that state 
+```
+sudo docker start <container id>
+```
