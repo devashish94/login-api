@@ -1,9 +1,15 @@
+const path = require('path')
 const Sequelize = require('sequelize')
 const constants = require('../utils/constants')
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
-const sequelize = new Sequelize(constants.database, 'root', 'a', {
+const hostname = process.env.HOSTNAME || 'localhost';
+const user = process.env.DB_USER || 'root';
+const password = process.env.DB_PASSWORD;
+
+const sequelize = new Sequelize(constants.database, user, password, {
     dialect: 'mysql',
-    host: 'localhost',
+    host: hostname,
     define: {
         freezeTableName: true,
         timestamps: false

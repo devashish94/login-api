@@ -6,15 +6,14 @@ const app = express();
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 47008;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
 const rootRouter = require('./routes/rootRouter');
 const userRouter = require('./routes/userRouter');
 const pageNotFound = require('./middlewares/pageNotFound')
 const initializer = require('./helpers/intializeDatabase')
 const userModel = require('./models/UserSchema')
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use('/', rootRouter);
 app.use('/api', userRouter);
 app.use(pageNotFound);
@@ -27,7 +26,10 @@ async function main() {
           console.log(`Server is live at http://${HOST}:${PORT}`);
         });
     } catch(err) {
-        console.log(err)
+        console.log(err.message)
+        if (err.code === 'ECONNREFUSED') {
+            console.log('Database Server is not running. Please start it then try running the server')
+        }
     } 
 }
 

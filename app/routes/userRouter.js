@@ -5,6 +5,6 @@ const router = express.Router();
 router
   .get('/users/fetch', controller.fetch)
   // .post('/user/login', controller.login)
-  // .post('/user/register', controller.register)
+  .post('/user/register', controller.register)
 
 module.exports = router;
