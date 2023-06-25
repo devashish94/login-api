@@ -1,3 +1,6 @@
+# remove vscode
+.vscode/
+
 # Logs
 logs
 *.log
