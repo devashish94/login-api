@@ -9,7 +9,7 @@ If you want to test the server on your local machine, then just provide the Data
 | `PORT` | `9000` | PORT of the server |
 | `DB_HOST` | `localhost` | HOSTNAME of the MySQL database server |
 | `DB_USER` | `root` | USER of the MySQL database server |
-| `DB_PASSWORD` | `NONE` | **No Default Value** PASSWORD of the MySQL database server |
+| `DB_PASSWORD` | `NONE` | **No Default Value** PASSWORD of the MySQL database server|
 If you haven't set any HOST or PORT in the above command then use the default values provided in the above table for any further requests to the server, as shown in the below examples.
 Be sure to start the database server before attempting to run the below command. Replace password with the MySQL database server password in quotes.
 ```
