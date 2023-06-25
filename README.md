@@ -5,11 +5,12 @@ This is a basic login-api with MySQL as the database.
 If you want to test the server on your local machine, then just provide the Database Password as the other values have default values. The below are the default values:
 | Variable | Value     | Description                |
 | :-------- | :------- | :------------------------- |
-| `HOST` | `localhost` | HOSTNAME of the server |
-| `PORT` | `9000` | PORT of the server |
-| `DB_HOST` | `localhost` | HOSTNAME of the MySQL database server |
-| `DB_USER` | `root` | USER of the MySQL database server |
-| `DB_PASSWORD` | `NONE` | **No Default Value** PASSWORD of the MySQL database server|
+| `HOST` | `localhost` | Hostname of the server |
+| `PORT` | `9000` | Port of the server |
+| `DB_HOST` | `localhost` | Hostname of the MySQL database server |
+| `DB_USER` | `root` | Username of the MySQL database server |
+| `DB_PASSWORD` | `NONE` | **No Default Value** Password of the MySQL |
+
 If you haven't set any HOST or PORT in the above command then use the default values provided in the above table for any further requests to the server, as shown in the below examples.
 Be sure to start the database server before attempting to run the below command. Replace password with the MySQL database server password in quotes.
 ```
