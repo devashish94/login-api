@@ -29,7 +29,7 @@ curl --request GET http://localhost:9000/server-status
 ```
 You should get back a response in the form of JSON, which should have a status, statusCode and a simple message if the sever is running. 
 
-### Checking all the available URIs supportd by the server
+### Checking all the available URIs supported by the server
 Just send a GET request with the URI '/available'. It will give back all the supported endpoints with their request method with a basic description. The command is as follow:
 ```
 curl --request GET http://localhost:9000/available
