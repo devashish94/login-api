@@ -33,7 +33,7 @@ curl --request GET http://localhost:9000/available
 ``` 
 
 ### If running MySQL using Docker
-Use the following command to spawn a new MySQL Database container. Replace the <password>  with the above DB_PASSWORD.
+Use the following command to spawn a new MySQL Database container. Replace the password with the above DB_PASSWORD.
 ```
 sudo docker run --name=<any-name> -e MYSQL_ROOT_PASSWORD=<password> -p 3306:3306 -d mysql
 ``` 
