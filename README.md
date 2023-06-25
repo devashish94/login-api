@@ -14,7 +14,8 @@ If you want to test the server on your local machine, then just provide the Data
 If you haven't set any HOST or PORT in the above command then use the default values provided in the above table for any further requests to the server, as shown in the below examples. 
 
 Be sure to start the database server before attempting to run the below command.
-Replace password with the MySQL database server password in quotes.
+Replace password with the MySQL database server password in quotes. 
+
 To start the server move to any directory in or after the root directory run the below command: 
 ```
 DB_PASSWORD=password npm start
