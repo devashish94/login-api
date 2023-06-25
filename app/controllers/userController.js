@@ -1,35 +1,51 @@
-const Users = require('../models/UserSchema')
+const Users = require('../models/UserSchema');
+const userService = require('../services/userService');
 
 module.exports = {
-  fetch: async function(req, res) {
+  fetch: async (req, res) => {
     const users = await Users.findAll()
-    return res.json({users})
+    return res.json(users)
   },
-  register: async function(req, res) {
+
+  register: async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    const user = await Users.findOne({
-      where: {
-        username: username
-      }
-    })
-    if (user) {
-      return res.status(200).json({
+    const createUserProcess = await userService.createUser(username, password);    
+    
+    if (createUserProcess.error) {
+      return res.status(404).json({
         status: 'FAIL',
-        statusCode: 400,
-        message: `User with the username '${username}' already exists`
+        statusCode: 404,
+        errorDescription: createUserProcess.message
       })
     }
-    await Users.create({
-      username: username,
-      password: password 
-    })
     return res.json({
       status: 'OK',
       statusCode: 200,
-      message: `User successfully registered`,
+      message: 'User successfully registered',
       username: username
+    })
+  },
+
+  login: async (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    const loginProcess = await userService.loginUser(username, password);
+
+    if (loginProcess.error) {
+      return res.status(404).json({
+        status: 'FAIL',
+        statusCode: 404,
+        errorDescription: loginProcess.message
+      })
+    }
+    return res.json({
+      status: 'OK',
+      statusCode: 200,
+      message: 'User successfully logged in',
+      username: loginProcess.username
     })
   }
 }
