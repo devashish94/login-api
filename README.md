@@ -1,7 +1,7 @@
 # login-api
 This is a basic login-api with MySQL as the database.
 
-#### Starting the Server
+### Starting the Server
 If you want to test the server on your local machine, then just provide the Database Password as the other values have default values. The below are the default values:
 | Variable | Value     | Description                |
 | :-------- | :------- | :------------------------- |
